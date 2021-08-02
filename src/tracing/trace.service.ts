@@ -2,7 +2,7 @@ import { context, trace, Span } from '@opentelemetry/api';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class TracingService {
+export class TraceService {
   public getSpan(): Span {
     return trace.getSpan(context.active());
   }

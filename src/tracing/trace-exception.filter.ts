@@ -3,7 +3,7 @@ import { BaseExceptionFilter } from '@nestjs/core';
 import { context, SpanStatusCode, trace } from '@opentelemetry/api';
 
 @Catch()
-export class TracingExceptionFilter extends BaseExceptionFilter {
+export class TraceExceptionFilter extends BaseExceptionFilter {
   catch(exception: unknown, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse();

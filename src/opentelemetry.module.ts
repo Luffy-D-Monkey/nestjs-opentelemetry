@@ -1,32 +1,32 @@
 import { DynamicModule, Module, Provider } from '@nestjs/common';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
-import { TracingInterceptor } from './tracing/tracing.interceptor';
-import { TracingExceptionFilter } from './tracing/tracing-exception.filter';
+import { TraceInterceptor } from './tracing/trace.interceptor';
+import { TraceExceptionFilter } from './tracing/trace-exception.filter';
 import { NodeSDK, NodeSDKConfiguration } from '@opentelemetry/sdk-node';
-import { TracingService } from './tracing/tracing.service';
+import { TraceService } from './tracing/trace.service';
 import { Constants } from './tracing/constants';
 
 @Module({})
-export class TracingModule {
+export class Opentelemetryodule {
   static async register(
     configuration?: Partial<NodeSDKConfiguration>,
   ): Promise<DynamicModule> {
     return {
       global: true,
-      module: TracingModule,
+      module: Opentelemetryodule,
       providers: [
         await this.createProvider(configuration),
         {
           provide: APP_INTERCEPTOR,
-          useClass: TracingInterceptor,
+          useClass: TraceInterceptor,
         },
         {
           provide: APP_FILTER,
-          useClass: TracingExceptionFilter,
+          useClass: TraceExceptionFilter,
         },
-        TracingService,
+        TraceService,
       ],
-      exports: [TracingService],
+      exports: [TraceService],
     };
   }
 

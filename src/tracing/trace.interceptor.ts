@@ -8,7 +8,7 @@ import {
 import { map } from 'rxjs/operators';
 
 @Injectable()
-export class TracingInterceptor implements NestInterceptor {
+export class TraceInterceptor implements NestInterceptor {
   async intercept(executionContext: ExecutionContext, next: CallHandler) {
     return next.handle().pipe(
       map((data) => {
