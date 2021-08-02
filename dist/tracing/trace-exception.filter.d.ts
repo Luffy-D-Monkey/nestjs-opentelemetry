@@ -1,5 +1,5 @@
 import { ArgumentsHost } from '@nestjs/common';
 import { BaseExceptionFilter } from '@nestjs/core';
-export declare class TracingExceptionFilter extends BaseExceptionFilter {
+export declare class TraceExceptionFilter extends BaseExceptionFilter {
     catch(exception: unknown, host: ArgumentsHost): void;
 }

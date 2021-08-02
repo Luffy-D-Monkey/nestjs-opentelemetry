@@ -6,11 +6,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TracingInterceptor = void 0;
+exports.TraceInterceptor = void 0;
 const api_1 = require("@opentelemetry/api");
 const common_1 = require("@nestjs/common");
 const operators_1 = require("rxjs/operators");
-let TracingInterceptor = class TracingInterceptor {
+let TraceInterceptor = class TraceInterceptor {
     async intercept(executionContext, next) {
         return next.handle().pipe(operators_1.map((data) => {
             const req = executionContext.switchToHttp().getRequest();
@@ -26,8 +26,8 @@ let TracingInterceptor = class TracingInterceptor {
         }));
     }
 };
-TracingInterceptor = __decorate([
+TraceInterceptor = __decorate([
     common_1.Injectable()
-], TracingInterceptor);
-exports.TracingInterceptor = TracingInterceptor;
-//# sourceMappingURL=tracing.interceptor.js.map
+], TraceInterceptor);
+exports.TraceInterceptor = TraceInterceptor;
+//# sourceMappingURL=trace.interceptor.js.map

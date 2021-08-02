@@ -6,11 +6,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TracingExceptionFilter = void 0;
+exports.TraceExceptionFilter = void 0;
 const common_1 = require("@nestjs/common");
 const core_1 = require("@nestjs/core");
 const api_1 = require("@opentelemetry/api");
-let TracingExceptionFilter = class TracingExceptionFilter extends core_1.BaseExceptionFilter {
+let TraceExceptionFilter = class TraceExceptionFilter extends core_1.BaseExceptionFilter {
     catch(exception, host) {
         const ctx = host.switchToHttp();
         const response = ctx.getResponse();
@@ -29,8 +29,8 @@ let TracingExceptionFilter = class TracingExceptionFilter extends core_1.BaseExc
         super.catch(exception, host);
     }
 };
-TracingExceptionFilter = __decorate([
+TraceExceptionFilter = __decorate([
     common_1.Catch()
-], TracingExceptionFilter);
-exports.TracingExceptionFilter = TracingExceptionFilter;
-//# sourceMappingURL=tracing-exception.filter.js.map
+], TraceExceptionFilter);
+exports.TraceExceptionFilter = TraceExceptionFilter;
+//# sourceMappingURL=trace-exception.filter.js.map

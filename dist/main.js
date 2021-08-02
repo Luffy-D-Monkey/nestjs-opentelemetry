@@ -12,8 +12,8 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./opentelemetry.module"), exports);
 __exportStar(require("./tracing/Decorators/Span"), exports);
-__exportStar(require("./tracing/tracing.service"), exports);
-__exportStar(require("./tracing/tracing.interceptor"), exports);
-__exportStar(require("./tracing/tracing-exception.filter"), exports);
+__exportStar(require("./tracing/trace.service"), exports);
+__exportStar(require("./tracing/trace.interceptor"), exports);
+__exportStar(require("./tracing/trace-exception.filter"), exports);
 __exportStar(require("./tracing/constants"), exports);
 //# sourceMappingURL=main.js.map

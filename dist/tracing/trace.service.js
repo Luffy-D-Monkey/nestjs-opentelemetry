@@ -6,10 +6,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TracingService = void 0;
+exports.TraceService = void 0;
 const api_1 = require("@opentelemetry/api");
 const common_1 = require("@nestjs/common");
-let TracingService = class TracingService {
+let TraceService = class TraceService {
     getSpan() {
         return api_1.trace.getSpan(api_1.context.active());
     }
@@ -18,8 +18,8 @@ let TracingService = class TracingService {
         return tracer.startSpan(name);
     }
 };
-TracingService = __decorate([
+TraceService = __decorate([
     common_1.Injectable()
-], TracingService);
-exports.TracingService = TracingService;
-//# sourceMappingURL=tracing.service.js.map
+], TraceService);
+exports.TraceService = TraceService;
+//# sourceMappingURL=trace.service.js.map
