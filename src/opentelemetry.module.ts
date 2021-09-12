@@ -7,13 +7,13 @@ import { TraceService } from './tracing/trace.service';
 import { Constants } from './tracing/constants';
 
 @Module({})
-export class Opentelemetryodule {
+export class OpentelemetryModule {
   static async register(
     configuration?: Partial<NodeSDKConfiguration>,
   ): Promise<DynamicModule> {
     return {
       global: true,
-      module: Opentelemetryodule,
+      module: OpentelemetryModule,
       providers: [
         await this.createProvider(configuration),
         {
